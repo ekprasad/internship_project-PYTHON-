@@ -61,29 +61,3 @@ for data in rl_data:
         stock_dict[label]=val
 print(stock_dict)  
 
-'''
-**********
-#stock_list=["RELIANCE","NMDC","BPCL"]
-stock_name="RELIANCE"
-rl_link=requests.get(f"https://www.screener.in/company/{stock_name}/consolidated/")
-soup = BeautifulSoup(rl_link.content,"html.parser")
-#print (soup.text)
-#rl_data=soup.select("div",class_="zz63rd").find_all("tr",class_="JgXcPd")
-rl_data=soup.find("div",class_="company-ratios").find_all('li')
-#rl_data=soup.find("div",class_="company-ratios").find('li',class_="flex flex-space-between")
-
-#print(rl_data.text[2])
-#import pdb; pdb.set_trace()
-stock_dict={}
-stock_dict["name"]=stock_name
-#current_date
-for data in rl_data:
-
-    label = data.find("span", class_="name").text.strip()
-    val=data.find("span",class_="number").text.strip()
-    stock_dict[label]=val
-print(stock_dict)   
-
-    
-
-'''
